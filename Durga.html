@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavya & Shayari Collection ♥</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Rozha+One&family=Yatra+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0f0c1b;
+            color: #f3e8ee;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        /* Hero Header */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(180deg, #1b1528 0%, #0f0c1b 100%);
+            border-bottom: 1px solid rgba(226, 114, 151, 0.2);
+        }
+        header h1 {
+            font-family: 'Rozha One', serif;
+            font-size: 2.8rem;
+            color: #ffb7c5;
+            text-shadow: 0 0 15px rgba(255, 183, 197, 0.4);
+            margin-bottom: 10px;
+        }
+        header p {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.8rem;
+            color: #d4a373;
+        }
+
+        /* Container & Cards Layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .poem-card {
+            background: rgba(27, 21, 40, 0.7);
+            border: 1px solid rgba(226, 114, 151, 0.15);
+            border-radius: 20px;
+            margin-bottom: 50px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .poem-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(226, 114, 151, 0.4);
+        }
+
+        /* Image Display */
+        .image-wrapper {
+            width: 100%;
+            max-height: 550px;
+            overflow: hidden;
+            background-color: #08060f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 550px;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Text Content Styling */
+        .content-box {
+            padding: 35px 30px;
+            text-align: center;
+        }
+
+        .content-box h2 {
+            font-family: 'Rozha One', serif;
+            color: #ffb7c5;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+        .content-box h2::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffb7c5, transparent);
+            margin: 8px auto 0;
+        }
+
+        .poem-text {
+            white-space: pre-line;
+            font-size: 1.1rem;
+            color: #e2d8e4;
+            font-weight: 300;
+        }
+
+        .poem-hindi {
+            font-family: 'Rozha One', serif;
+            font-size: 1.15rem;
+            line-height: 2;
+            color: #ffe6ea;
+        }
+
+        .poem-hinglish {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: #e2d8e4;
+        }
+
+        .romantic-quote {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.8rem;
+            color: #ffb7c5;
+            line-height: 1.6;
+        }
+
+        /* Special Highlights */
+        .highlight {
+            color: #ffb7c5;
+            font-weight: 600;
+        }
+        .heart-accent {
+            color: #e63946;
+            margin: 0 5px;
+        }
+
+        /* Proposal Section Styling */
+        #proposalCard {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            padding: 40px 20px;
+            background: rgba(27, 21, 40, 0.9);
+            border: 1px solid rgba(226, 114, 151, 0.3);
+            border-radius: 20px;
+            text-align: center;
+            min-height: 200px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        #proposalCard h2 {
+            font-family: 'Rozha One', serif;
+            color: #ffb7c5;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+
+        #proposalCard button {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        #proposalCard button:first-of-type {
+            background-color: #e63946;
+            color: #ffffff;
+        }
+
+        #proposalCard button:first-of-type:hover {
+            background-color: #ff4d5a;
+            transform: scale(1.05);
+        }
+
+        #noBtn {
+            background-color: #4a405a;
+            color: #f3e8ee;
+            transition: all 0.2s ease;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #090712;
+            color: #887a91;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(226, 114, 151, 0.1);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.1rem; }
+            header p { font-size: 1.4rem; }
+            .content-box { padding: 25px 18px; }
+            .poem-text { font-size: 1rem; }
+            .poem-hindi { font-size: 1.05rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>मुकम्मल ग़ज़ल ♥</h1>
+        <p>A Collection of Love, Poetry & Memories</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Card 1 -->
+        <div class="poem-card">
+            <div class="image-wrapper">
+                <img src="https://i.ibb.co/HD4s6xZL/pic1.jpg" alt="Chand Photo">
+            </div>
+            <div class="content-box">
+                <h2>ज़ुल्फ़ों की काली घटाओं से...</h2>
+                <div class="poem-text poem-hindi">
+ज़ुल्फ़ों की काली घटाओं से शुरू होती है यह दास्तान,
+तेरी पेशानी पे चमकता है जैसे आधा आसमान।
+उन कातिल आँखों में छुपे हैं मयखानों के कई राज़,
+तेरी ख़ामोशी में भी गूँजती है मोहब्बत की आवाज़।
+
+गुलाबी रुख़सार पे जब आती है वो हल्की सी हँसी,
+तेरे सुर्ख़ लबों को देखकर ठहर जाती है हर ख़ुशी।
+सुराही सी गर्दन पे ढलता है सुबह का नूर,
+तेरी सादगी के आगे तो हर हुस्न है मजबूर।
+
+वो नाज़ुक सी उँगलियाँ, वो हाथों का तराशा हुआ रूप,
+कड़कती ठंड में जैसे छन के आती गुनगुनी धूप।
+लचकती कमर में छुपा है सादगी और शबाब का जादू,
+तेरी चाल देखकर यह दिल नहीं रहता बेक़ाबू।
+
+पाँव में मचलती पायल की वो छन-छन की ताने,
+ज़मीन भी तरसती है तेरे नक़्श-ए-क़दम छू जाने।
+और वो पाँव का अँगूठा... जो छूता है मिट्टी को नज़ाकत से,
+रश्क करती है यह ज़मीन भी तेरी उस नफ़ासत से।
+
+सर से लेकर पाँव के अँगूठे तक, तू एक मुकम्मल ग़ज़ल है,
+ख़ुदा ने फुर्सत में लिखा, तू उस शाहकार का असर है।
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="poem-card">
+            <div class="image-wrapper">
+                <img src="https://i.ibb.co/xtfrGBvZ/pic2.jpg" alt="Harshu Photo">
+            </div>
+            <div class="content-box">
+                <h2>Tum Woh Pahli Ladki Ho</h2>
+                <div class="poem-text poem-hinglish">
+tum woh pahli ladki ho
+jisko dekh ke sadiyon ka safar ik lamha sa lagta hai
+jisko dekh ke bheed mein ajnabi apna sa lagta hai
+
+tum woh pahli ladki ho
+jisko dekh ke bhatki hui hawaon ko thikana mil jata hai
+jisko dekh ke mery banjar lafzon ko paimana mil jata hai
+
+tum woh pahli ladki ho
+jisko dekh ke asmaan key tarey zameen par utarny ki zidd karty hain
+jisko dekh ke mery qaid iraade hadd sey guzarne ki zidd karty hain
+
+tum woh pahli ladki ho
+jisko dekh ke waqt ki dhadkan ruk si jati hai
+jisko dekh ke paharon ki choti jhuk si jati hai
+
+tum woh pahli ladki ho
+jisko dekh ke bechain nigahon ko qarar aa jata hai
+jisko dekh ke apni deewangi pe pyar aa jata hai
+
+tum woh pahli ladki ho
+jisko dekh ke bikhry hue khawabon ko tabeer mil jati hai
+jisko dekh ke banjar rooh ko ek tasveer mil jati hai
+
+tum woh pahli ladki ho
+jisko dekh ke hathon ki lakeerein naya naseeb bunti hain
+jisko dekh ke khuda ki aayatein meri duayein sunti hain
+
+tum woh pahli ladki ho
+jisko dekh ke is kachi umar ka ishq ibadat ban jata hai
+jisko dekh ke fanaa ho jana bhi meri aadat ban jata hai
+
+tum woh pahli ladki ho
+jisko paa kar kisi aur ko pany ki gunjaish nahi milti
+jisko dekh ke mery zikr mein kisi aur ki farmaish nahi milti
+<span class="highlight">tum vo pehli ladki ho...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="poem-card">
+            <div class="image-wrapper">
+                <img src="https://i.ibb.co/7JkJzBz7/pic3.jpg" alt="Jannat Photo">
+            </div>
+            <div class="content-box">
+                <h2>Jaise Khatu Wale Ke Dar Par...</h2>
+                <div class="poem-text poem-hinglish">
+Jaise Khatu Wale ke dar par jhukta hai sar aastha se,
+Mera yeh dil bhi juda hai tumse usi sachhe raste se.
+
+Koi lalach nahi, koi buri niyat nahi is dil mein,
+Maine aapse mohabbat ki hai bilkul shradha ke vaaste se.
+
+Aap dhyan lagati ho Shyam ka, aur main aapka aks dekhta hu,
+Aapki pavitra aatma mein hi main apna khuda dekhta hu.
+
+Jaise Sanwre ki kripa se har bikhra hua jeevan sanwarta hai,
+Aapke aane se meri zindagi ka har ek lamha nikharta hai.
+
+Log dundhte hain zamane mein matlab ki mohabbat,
+Mujhe toh bas umr bhar aapki ijjat aur sath chahiye.
+
+Jaise Morchhari ki chhav mein milta hai sukoon rooh ko,
+Mujhe aapke sath mein har pal waisa hi hissa chahiye.
+
+Aapki khamoshi ko galat samjha, yeh meri nadani thi,
+Par aapki muskurahat hi toh meri poori zindagani thi.
+
+Haath thaam kar chalna hai mujhe is rishte mein hamesha,
+Jaise Haare ka sahara Baba Shyam hai, waise mera sahara aap ho.
+
+Koi shart nahi, koi darr nahi, bas ek sachha vishwas hai,
+Jab tak yeh saans chalegi, aapka yeh deewana aapke paas hai.
+
+Aapko paakar maine jaise zindagi ka sabse bada upahar paya,
+Meri is nishchal mohabbat par ab toh Sanwre ka bhi saya hai.
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="poem-card">
+            <div class="image-wrapper">
+                <img src="https://i.ibb.co/dwwT2XvH/pic4.jpg" alt="Kudrat Photo">
+            </div>
+            <div class="content-box">
+                <h2>Pyar Ki Paribhasha</h2>
+                <div class="poem-text poem-hinglish">
+Pyar ki paribhasha aap ho mere liye,
+Meri abhilasha aap ho...
+
+Is bhatakti hui zindagi ka ekmatra sahara aap ho,
+Meri subah ki pehli kiran, aur raat ka tara aap ho.
+
+Maine jo dekha tha kabhi band aankhon se ek khwab,
+Us khwab ko jo mili, woh mukammal disha aap ho.
+
+Log dundhte hain khuda ko mandir aur masjidon mein,
+Meri har ek ibaadat, meri har ek dua aap ho.
+
+Aapse pehle na thi zindagi mein koi roshni,
+Is be-jaan se dil ki ab toh har ek sada aap ho.
+
+Dooriyan chahe hume jitna bhi aazma le is daur mein,
+Meri har saans par likha hua ekmatra naam aap ho.
+
+Yeh rishta toh shuruat hai hamare silsile ki,
+Meri aakhri manzil, mera aakhri anjaam aap ho.
+
+Aapka gussa bhi mujhe kisi tohfe se kam nahi lagta,
+Is bikhre hue dil ka sukoon, iska qarar aap ho.
+
+Ab aur kya kahein aapki tareef mein hum,
+Jo kabhi khatam na ho, woh meri be-hisaab mohabbat aap ho.
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="poem-card">
+            <div class="image-wrapper">
+                <img src="https://i.ibb.co/PzV8bV1Y/shiddat.jpg" alt="shiddat Photo">
+            </div>
+            <div class="content-box">
+                <h2>Can I hold your hand for the rest of my life?❤️</h2>
+                
+                <div class="poem-text poem-hinglish" style="margin-bottom: 25px;">
+Aapki aakhon ki sahulat ho mayyasar jisko 
+Wo bhala chand sitaaron ko kahan dekhega 
+Rubaru ishq ho aur ishq bhi aapke jaisa, to phir koi Dil ke khasaaron ko koi kahan dekhega... <span class="heart-accent">❤️</span>
+                </div>
+
+                <div class="poem-text poem-hinglish" style="margin-bottom: 25px; border-top: 1px dashed rgba(226,114,151,0.2); padding-top: 20px;">
+Mai Dawa poochhte phirta tha zamaane bhar se 
+Bhar gaye zakhm mere tere haath lagaane bhar se 
+Baad muddat ke bade chain se soya tha mai 
+Ud gayi neend tere khwab mein aane bhar se
+Ab to lagta hai ki mastak hi chadhana hoga 
+Kaun sunta hai yahan doodh chadhane bhar se
+                </div>
+
+                <div class="poem-text poem-hinglish" style="margin-bottom: 25px; border-top: 1px dashed rgba(226,114,151,0.2); padding-top: 20px;">
+Khwahish hai ek roz teri khoobiyan ginuu
+Dariya mein aankhe daal ke mai macchliyan ginuu 
+Dhalti hui ye shaam hai haathon mein tera haath 
+Ab shaayri karoon ki teri choodiyan ginuu
+Shaamil ho meri yaad mein logon ki ek bheed 
+Tanha kahiin pe baith ke main teri Hichkiyaan ginuu 
+Aaya hoon jab se gaaon isi soch main hoon main 
+Tere sunhare baal ya phir chuuttiyaan ginuu 
+Socha hai tujhko shaql doon unchey makaan ki 
+Chadhte utarte roz teri seedhiyan ginuu
+                </div>
+
+                <div class="poem-text poem-hindi" style="margin-bottom: 25px; border-top: 1px dashed rgba(226,114,151,0.2); padding-top: 20px;">
+तुम शिव के सर पर सजे चंद्रमा सी 
+मैं मात्र चरणों का अर्पण हूँ... तुम शांति की ज्योति हो, 
+मैं ध्यान का दर्पण हूँ, तुम कृपा की धारा हो, 
+मैं बस तेरा स्पंदन हूँ... ना चाह है जग की, ना कोई और वरण हूँ, 
+तू ही मेरी पूजा है... मैं तेरा समर्पण हूँ
+                </div>
+
+                <div class="poem-text romantic-quote" style="border-top: 1px dashed rgba(226,114,151,0.2); padding-top: 20px;">
+"In aakhon pr itne bhi zulm naa karo hmne pehedaar nahi lagwaye hai ghayal hone ke liye sirf ek adaa hi kaafi hai <span class="heart-accent">❤️</span>"
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Proposal Card -->
+        <div id="proposalCard">
+            <div id="proposalContent">
+                <h2>Will you be my Chidkoli? ❤️</h2>
+                <button onclick="acceptProposal()">Yes!</button>
+                <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            </div>
+
+            <div id="successBox" style="display: none;">
+                <h2>Yay! Forever Together ❤️</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Created with Love ♥ All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            const card = document.getElementById('proposalCard');
+            
+            const cardRect = card.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+
+            const maxX = cardRect.width - btnRect.width - 40;
+            const maxY = cardRect.height - btnRect.height - 40;
+
+            const randomX = Math.floor(Math.random() * maxX) - (cardRect.width / 2) + (btnRect.width / 2);
+            const randomY = Math.floor(Math.random() * maxY) - (cardRect.height / 2) + (btnRect.height / 2);
+
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = `calc(50% + ${randomX}px)`;
+            noBtn.style.top = `calc(50% + ${randomY}px)`;
+        }
+
+        function acceptProposal() {
+            document.getElementById('proposalContent').style.display = 'none';
+            document.getElementById('successBox').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
